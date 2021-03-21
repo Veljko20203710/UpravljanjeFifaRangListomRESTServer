@@ -46,7 +46,6 @@ public class SelectionService {
     }
 
     public void updateSelection(Selection selection, int id) { 
-        System.out.println(selectionRepository.findById(id));
         if(!selectionRepository.findById(id).isPresent()) throw new SelectionNotFoundException();
         selectionRepository.save(selection);
     }

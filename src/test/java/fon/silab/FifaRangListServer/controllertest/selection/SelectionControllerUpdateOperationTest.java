@@ -109,7 +109,7 @@ public class SelectionControllerUpdateOperationTest extends AbstractTest{
                 .andReturn();
 
         int status = mvcResult.getResponse().getStatus();
-        Assertions.assertEquals(400, status);
+        Assertions.assertEquals(404, status);
     }
  }
 

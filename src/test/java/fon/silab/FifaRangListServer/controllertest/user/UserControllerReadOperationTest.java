@@ -87,7 +87,6 @@ public class UserControllerReadOperationTest extends AbstractTest {
                 .andReturn();
 
         int status = mvcResult.getResponse().getStatus();
-        System.out.println(mvcResult.getResolvedException());
         Assertions.assertEquals(200, status);
     }
 }

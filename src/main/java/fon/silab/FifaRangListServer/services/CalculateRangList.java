@@ -28,6 +28,16 @@ public class CalculateRangList {
     SelectionRepository selectionRepository;
     MatchRepository matchRepository;
 
+    public SelectionRepository getSelectionRepository() {
+        return selectionRepository;
+    }
+
+    public MatchRepository getMatchRepository() {
+        return matchRepository;
+    }
+    
+    
+
     @Autowired
     public CalculateRangList(SelectionRepository selectionRepository, MatchRepository matchRepository) {
         this.selectionRepository = selectionRepository;

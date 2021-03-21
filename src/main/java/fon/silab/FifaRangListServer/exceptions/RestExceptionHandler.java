@@ -44,8 +44,8 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     @Override
     protected ResponseEntity<Object> handleHttpRequestMethodNotSupported(HttpRequestMethodNotSupportedException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
         String bodyOfResponse = "HttpRequest with that parametars is not allowed ";
-        ApiException exception = new ApiException(bodyOfResponse, HttpStatus.BAD_REQUEST, ZonedDateTime.now());
-        return new ResponseEntity<>(exception, HttpStatus.BAD_REQUEST);
+        ApiException exception = new ApiException(bodyOfResponse, HttpStatus.METHOD_NOT_ALLOWED, ZonedDateTime.now());
+        return new ResponseEntity<>(exception, HttpStatus.METHOD_NOT_ALLOWED);
     }
 
     @ExceptionHandler(value = {SelectionNotFoundException.class})
@@ -101,8 +101,8 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(value = {EntityNotFoundException.class})
     protected ResponseEntity<Object> handleEntityNotFoundException(EntityNotFoundException ex, WebRequest request) {
-        ApiException exception = new ApiException(ex.getMessage(), HttpStatus.BAD_REQUEST, ZonedDateTime.now());
-        return new ResponseEntity<>(exception, HttpStatus.BAD_REQUEST);
+        ApiException exception = new ApiException(ex.getMessage(), HttpStatus.NOT_FOUND, ZonedDateTime.now());
+        return new ResponseEntity<>(exception, HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(value = {BusyUsernameException.class})

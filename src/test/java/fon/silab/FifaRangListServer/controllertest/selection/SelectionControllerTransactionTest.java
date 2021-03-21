@@ -45,7 +45,6 @@ public class SelectionControllerTransactionTest extends AbstractTest {
 
     private void deleteSelection() throws Exception {
         String uri = "/api/selections/" + TRANSACTION_SELECTION;
-        System.out.println(uri);
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders
                 .delete(uri)
                 .accept(MediaType.APPLICATION_JSON_VALUE))
@@ -55,7 +54,6 @@ public class SelectionControllerTransactionTest extends AbstractTest {
 
     private List<Match> getMatchesOfSelection() throws Exception {
         String uri = "/api/selections/" + TRANSACTION_SELECTION + "/matches";
-        System.out.println(uri);
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders
                 .get(uri)
                 .accept(MediaType.APPLICATION_JSON_VALUE))

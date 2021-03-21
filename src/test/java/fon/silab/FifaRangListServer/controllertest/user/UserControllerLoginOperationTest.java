@@ -61,9 +61,6 @@ public class UserControllerLoginOperationTest extends AbstractTest{
                 .andReturn();
 
         int status = mvcResult.getResponse().getStatus();
-        System.out.println("mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm");
-        System.out.println(mvcResult.getResolvedException());
-        System.out.println(mvcResult.getResolvedException().getMessage());
         Assertions.assertEquals(401, status);
         Assertions.assertEquals("Username or password are wrong. Please, try again.", mvcResult.getResolvedException().getMessage());
     }
